@@ -1,0 +1,37 @@
+﻿@model Paint
+
+    <div class="product-style_5 mb">
+        <div class="product-item-inner row mg-0">
+            <div class="col-sm-4 col-xs-12 pd-0">
+                <div class="product-thumb">
+                    <div class="product-flash-wrap"></div>
+                    <div class="product-thumb-primary"><img src="@Model.img" alt="product1" width="375" height="450" class="attachment-shop_catalog size-shop_catalog wp-post-image" /></div><a href="#" class="product-link">
+                        <div class="product-hover-sign">
+                            <hr />
+                            <hr />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-8 col-xs-12 pd-0">
+                <div class="product-info">
+                    <a href="#">
+                        <h3>@Model.name</h3>
+                    </a>
+                    <div class="div-rate mb-20">                        
+                            <ins><span class="product-begreen-price-amount amount"><span class="product-begreen-price-currencysymbol">$</span>@Model.price</span></ins>
+                        </span>
+                    </div>
+                    <div class="product-single-short-description mb-20">
+                        <p>@Model.longDesc</p>
+                    </div>
+                    <div class="product-actions">
+                        <div class="add-to-cart-wrap"><a class="add_to_cart_button" asp-controller="ShopCart" asp-action="addToCart" asp-route-id="@Model.id"><i class="fa fa-cart-plus"></i> Add to cart</a></div>
+                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-559">
+                            <div class="yith-wcwl-add-button show"><a href="#" class="add_to_wishlist"><i class="fa fa-heart-o"></i> Add to Wishlist</a></div>
+                        </div><a href="#" class="compare add_to_compare"><i class="fa fa-signal"></i>Compare</a><a href="#" class="product-quick-view"><i class="fa fa-search"></i>Quick view</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

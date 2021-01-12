@@ -1,0 +1,26 @@
+﻿@using Shop.ViewModels
+@model PaintsListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+
+</head>
+<body>
+    <h1>Все Картины</h1>
+    <h3>@Model.currCategory</h3>
+    @{
+        foreach (Paint paint in Model.AllPaints)
+        {
+            @Html.Partial("AllPaints", paint)
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,249 @@
+﻿@using Shop.ViewModels
+@model PaintsListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="images/icon/favicon.png" type="image/x-icon">
+
+    <!-- Web Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico%7CSource+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="~/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/animate/animated.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/owl.carousel.min/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/jquery.mmenu.all/jquery.mmenu.all.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/direction/css/noJS.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/prettyphoto-master/css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/slick-sider/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="~/libs/countdown-timer/css/demo.css">
+
+    <!-- Template CSS-->
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/css/home.css">
+
+</head>
+<body class="products products-list">
+    <div id="preloaderKDZ"></div>
+    <div class="yolo-site">
+        <header class="header yolo-header-style-10">
+            <div class="yolo-header-top yolo-header-top-style-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <div class="header-customize header-customize-right">
+                                <div class="custom-text-wrapper header-customize-item">Welcome to BeArt-Best Paints Shop</div>
+                                <div class="custom-text-wrapper header-customize-item"><i class="fa fa-truck"></i>Free Shipping On All Orders Over $1000</div>
+                                <div class="shopping-cart-wrapper header-customize-item with-price">
+                                    <div class="widget_shopping_cart_content">
+                                        <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
+                                        <div class="sub-total-text"><span class="product-begreen-price-amount amount" src="/ShopCart/Cart">$0.00</span></div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+
+                    <div class="main-nav-wrapper">
+                        <div class="header-left">
+                            <nav id="primary-menu" class="main-nav">
+                                <ul class="nav">
+                                    <li class="menu-item menu-home">
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li class="active menu-item menu-shop">
+                                        <a href="/Paints/Products">Shop</a>
+                                    </li>
+                                    <li class="menu-item menu-blog">
+                                        <a href="/Paints/Blog">Blog</a>
+                                    </li>
+                                    <li class="menu-item menu-blog">
+                                        <a href="/Paints/Contacts">Contacts</a>
+                                    </li>
+                                    <li class="menu-item menu-blog">
+                                        <a href="/ShopCart/Cart">Cart</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- .header-main-nav-->
+                        </div>
+
+                        <div class="header-right">
+                            <ul class="header-customize-item header-social-profile-wrapper">
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>      
+        </header>
+        <div id="example-wrapper">
+            <div class="div-box mb">
+                <div class="banner-subpage">
+                    <figure><img src="~/images/background/birshtadt-peyzazh-gory-vodopad1.jpg" alt="bg-banner" /></figure>
+                    <div class="banner-subpage-content">
+                        <h2>Products List</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="div-box mb">
+                <div class="container">
+                    <div class="col-md-9">
+                        <div class="product-wrap-list">
+                            @{
+                                foreach (Paint paint in Model.AllPaints)
+                                {
+                                    @Html.Partial("AllPaints", paint)
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="sidebar sidebar-product">
+                            <aside class="mb-45 search-sidebar">
+                                <h2 class="text-center mb-20">Search</h2>
+                                <form class="form-input">
+                                    <input type="text" placeholder="Search here..." /><a href="#"><i class="fa fa-search"></i></a>
+                                </form>
+                            </aside>
+                            <aside class="mb-45 categories">
+                                <h2 class="text-center mb-20">Categories</h2>
+                                <ul class="cat-list">
+                                    <li><a href="/Paints/Products">All</a></li>
+                                    <li><a href="/Paints/Products/1">Landscape</a></li>
+                                    <li><a href="/Paints/Products/2">Portrait</a></li>
+                                    <li><a href="#">Abstract</a></li>
+                                    <li><a href="#">Sur</a></li>
+                                </ul>
+                            </aside>
+                            <aside class="mb-45 compare">
+                                <h2 class="text-center mb-20">Compare</h2>
+                                <p class="text-center mb-20 mt-20">No products to compare</p>
+                                <p> <a href="#" class="btn clear">Clear All</a><a href="#" class="btn compare">Compare</a></p>
+                            </aside>
+                            <aside class="mb-45 follow-me">
+                                <h2 class="text-center mb-20">Follow Me</h2>
+                                <div class="desc-follow mb-20">MAKE A HAPPY MOMENTS</div>
+                                <ul class="social-profile text-center">
+                                    <li><a title="Facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a title="Twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a title="Pinterest" href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a title="GooglePlus" href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a title="Vimeo" href="#" target="_blank"><i class="fa fa-vimeo-square"></i></a></li>
+                                    <li><a title="Instagram" href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a title="Linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a title="Rss" href="#" target="_blank"><i class="fa fa-rss"></i></a></li>
+                                    <li><a title="Youtube" href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+
+            <div class="div-box">
+                <footer id="yolo-footer-wrapper">
+                    <div class="yolo-footer-wrapper footer-1">
+                        <div class="footer-top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="footer-col footer-1-col-1">
+                                            <p>We are a creative company that specializes in strategy & design. We like to create things with like – minded people who are serious about their passions.</p>
+                                            <ul id="social-footer">
+                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="footer-col footer-1-col-2">
+                                            <h3>Our Office</h3>
+                                            <div class="icon-info">
+                                                <p><strong>Address</strong><br />5 Kurchatova, Minsk, Belarus.</p><i class="fa fa-map-marker"></i>
+                                            </div>
+                                            <div class="icon-info">
+                                                <p><strong>Call Us</strong><br />(29) 123-45-67 (Or)<br />(33) 987-65-43</p><i class="fa fa-phone"></i>
+                                            </div>
+                                            <div class="icon-info">
+                                                <p><strong>Email Us</strong><br />beart@gmail.com</p><i class="fa fa-envelope"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="click-back-top-footer">
+                                    <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="fa fa-angle-up"></i>top</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="container">
+                                <p class="copyright">BEART ©  2020 COPYRIGHT</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+    <!-- .mv-site-->
+
+
+
+    <div class="popup-wrapper">
+    </div>
+    <!-- .popup-wrapper-->
+    <div class="click-back-top-body">
+        <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="btn-icon fa fa-angle-up"></i></button>
+    </div>
+
+    <!-- Vendor jQuery-->
+    <script type="text/javascript" src="~/libs/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/libs/animate/wow.min.js"></script>
+    <script type="text/javascript" src="~/libs/jquery.mmenu.all/jquery.mmenu.all.min.js"></script>
+    <script type="text/javascript" src="~/libs/countdown/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="~/libs/jquery-appear/jquery.appear.min.js"></script>
+    <script type="text/javascript" src="~/libs/jquery-countto/jquery.countTo.min.js"></script>
+    <script type="text/javascript" src="~/libs/direction/js/jquery.hoverdir.js"></script>
+    <script type="text/javascript" src="~/libs/direction/js/modernizr.custom.97074.js"></script>
+    <script type="text/javascript" src="~/libs/isotope/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="~/libs/isotope/fit-columns.js"></script>
+    <script type="text/javascript" src="~/libs/isotope/isotope-docs.min.js"></script>
+    <script type="text/javascript" src="~/libs/mansory/mansory.js"></script>
+    <script type="text/javascript" src="~/libs/prettyphoto-master/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/libs/slick-sider/slick.min.js"></script>
+    <script type="text/javascript" src="~/libs/countdown-timer/js/jquery.final-countdown.min.js"></script>
+    <script type="text/javascript" src="~/libs/countdown-timer/js/kinetic.js"></script>
+    <script type="text/javascript" src="~/libs/owl.carousel.min/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/js/main.js"></script>
+</body>
+</html>

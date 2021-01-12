@@ -1,0 +1,122 @@
+﻿@model Order
+
+
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Favicon-->
+        <link rel="shortcut icon" href="images/icon/favicon.png" type="image/x-icon">
+
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico%7CSource+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        <!-- Vendor CSS-->
+        <link rel="stylesheet" type="text/css" href="~/libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/animate/animated.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/owl.carousel.min/owl.carousel.min.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/jquery.mmenu.all/jquery.mmenu.all.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/direction/css/noJS.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/prettyphoto-master/css/prettyPhoto.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/slick-sider/slick.min.css">
+        <link rel="stylesheet" type="text/css" href="~/libs/countdown-timer/css/demo.css">
+
+        <!-- Template CSS-->
+        <link rel="stylesheet" type="text/css" href="~/css/main.css">
+        <link rel="stylesheet" type="text/css" href="~/css/home.css">
+
+    </head>
+    <body class="products products-list">
+        <header class="header yolo-header-style-10">
+            <div class="yolo-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="top-sidebar top-bar-left col-md-4">
+                            <aside id="text-11" class="widget widget_text">
+                                <div class="textwidget">
+                                    <div>Welcome to BeArt - Best Paints</div>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="top-sidebar top-bar-right col-md-8">
+                            <aside id="text-6" class="widget widget_text">
+                                <div class="textwidget"><i class="fa fa-home"></i> 5 Kurchatova, Minsk </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-nav-wrapper">
+                <div class="header-left">
+                    <nav id="primary-menu" class="main-nav">
+                        <ul class="nav">
+                            <li class="menu-item menu-home">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="menu-item menu-shop">
+                                <a href="/Paints/Products">Shop</a>
+                            </li>
+                            <li class="menu-item menu-blog">
+                                <a href="/Paints/Blog">Blog</a>
+                            </li>
+                            <li class="menu-item menu-blog">
+                                <a href="/Paints/Contacts">Contacts</a>
+                            </li>
+                            <li class="menu-item menu-blog">
+                                <a href="/ShopCart/Cart">Cart</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- .header-main-nav-->
+                </div>
+        </header>
+        <div class="row4">
+            <h3>Оформление заказа</h3>
+            <form asp-action="Checkout" method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label asp-for="name"></label>
+                    <div class="col-md-5">
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="surname"></label>
+                    <div class="col-md-5">
+                        <input asp-for="surname" class="form-control" />
+                        <span asp-validation-for="surname" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="adress"></label>
+                    <div class="col-md-5">
+                        <input asp-for="adress" class="form-control" />
+                        <span asp-validation-for="adress" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phone"></label>
+                    <div class="col-md-5">
+                        <input asp-for="phone" class="form-control" />
+                        <span asp-validation-for="phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="email"></label>
+                    <div class="col-md-5">
+                        <input asp-for="email" class="form-control" />
+                        <span asp-validation-for="email" class="text-danger"></span>
+                    </div>
+                </div>
+                <input class="btn btn-success" type="submit" value="Confirm" />
+            </form>
+        </div>
+    </body>
+</html>
